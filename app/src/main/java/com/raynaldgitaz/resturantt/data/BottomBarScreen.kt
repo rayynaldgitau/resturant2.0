@@ -1,4 +1,4 @@
-package com.raynaldgitaz.resturantt.bottomnav
+package com.raynaldgitaz.resturantt.data
 
 import com.raynaldgitaz.resturantt.R
 

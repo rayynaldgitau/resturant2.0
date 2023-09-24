@@ -34,12 +34,8 @@ fun Splash(navController: NavHostController) {
         navController.navigate(ROUTE_HOME)
     }
     Box(modifier = Modifier.fillMaxSize()){
-        Image(
-            painter = painterResource(id = R.drawable.splash3),
-            contentDescription ="Background",
-            contentScale = ContentScale.FillBounds,
-            modifier = Modifier.matchParentSize()
-
+        Image(painter = painterResource(id = R.drawable.splash9), contentDescription ="Background", contentScale = ContentScale.FillBounds,
+            modifier = Modifier.fillMaxSize()
         )
     }
 

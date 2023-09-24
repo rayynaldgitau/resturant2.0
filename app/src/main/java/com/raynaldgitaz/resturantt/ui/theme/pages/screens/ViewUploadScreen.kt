@@ -54,7 +54,7 @@ import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.DrinkItem
 @Composable
 fun ViewUploadsScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize()){
-        Image(painter = painterResource(id = R.drawable.backgroundxx), contentDescription ="Background", contentScale = ContentScale.FillBounds,
+        Image(painter = painterResource(id = R.drawable.background2), contentDescription ="Background", contentScale = ContentScale.FillBounds,
             modifier = Modifier.fillMaxSize()
         )
     }
@@ -78,8 +78,8 @@ fun ViewUploadsScreen(navController: NavHostController) {
         ) {
             Text(text = "Menu",
                 fontSize = 60.sp,
-                fontFamily = FontFamily.SansSerif,
-                color = Color.Black)
+                fontFamily = FontFamily.Monospace,
+                color = Color.White)
 
 
             Spacer(modifier = Modifier.height(20.dp))

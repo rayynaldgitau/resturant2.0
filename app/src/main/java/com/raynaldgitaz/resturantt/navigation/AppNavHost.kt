@@ -28,7 +28,7 @@ import com.raynaldgitaz.resturantt.ui.theme.pages.splash.Splash
 @Composable
 fun AppNavHost(modifier: Modifier = Modifier,
                navController: NavHostController = rememberNavController(),
-               startDestination:String = ROUTE_HOME) {
+               startDestination:String = ROUTE_SPLASH ) {
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -64,7 +64,7 @@ fun AppNavHost(modifier: Modifier = Modifier,
         composable(ROUTE_VIEW_UPLOADS){
             ViewUploadsScreen(navController)
         }
-        composable(SPLASH){
+        composable(ROUTE_SPLASH){
             Splash(navController)
         }
         composable(ROUTE_VIEW_UPLOAD_DRINKS){

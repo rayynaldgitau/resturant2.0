@@ -1,10 +1,10 @@
 package com.raynaldgitaz.resturantt.bottomnav
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.raynaldgitaz.resturantt.data.BottomBarScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewUploadDrinksScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.screens.AboutScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.screens.ViewUploadsScreen

@@ -139,7 +139,12 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
         if (hasImage && image != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,image)
-            Image(bitmap = bitmap.asImageBitmap(), contentDescription = "Selected image")
+            Image(bitmap = bitmap.asImageBitmap(),
+                contentDescription = "Selected image",
+                modifier = Modifier
+                    .size(200.dp)
+                .padding(30.dp,10.dp,10.dp)
+                )
         }
         Column(
             modifier = Modifier

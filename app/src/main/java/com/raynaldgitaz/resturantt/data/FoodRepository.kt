@@ -71,7 +71,7 @@ class FoodRepository(var navController: NavHostController,var context: Context) 
 
     fun deleteFood(id:String){
         var delRef = FirebaseDatabase.getInstance().getReference()
-            .child("Foods/$id")
+                                                .child("Uploads/$id")
         progress.show()
         delRef.removeValue().addOnCompleteListener {
             progress.dismiss()
@@ -85,7 +85,7 @@ class FoodRepository(var navController: NavHostController,var context: Context) 
 
     fun updateFood(name:String, description:String, price:String,id:String){
         var updateRef = FirebaseDatabase.getInstance().getReference()
-            .child("Foods/$id")
+            .child("Uploads/$id")
         progress.show()
         var updateData = Food(name, description, price, id)
         updateRef.setValue(updateData).addOnCompleteListener {
