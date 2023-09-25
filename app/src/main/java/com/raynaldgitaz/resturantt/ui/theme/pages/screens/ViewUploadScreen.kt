@@ -18,13 +18,21 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItemDefaults.contentColor
 import androidx.compose.material3.ListItemDefaults.shape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -46,11 +54,14 @@ import coil.compose.rememberAsyncImagePainter
 import com.raynaldgitaz.resturantt.R
 import com.raynaldgitaz.resturantt.data.FoodRepository
 import com.raynaldgitaz.resturantt.models.Upload
+import com.raynaldgitaz.resturantt.navigation.ROUTE_INTERIOR_HOMESCREEN
 import com.raynaldgitaz.resturantt.navigation.ROUTE_UPDATE_FOOD
+import com.raynaldgitaz.resturantt.navigation.ROUTE_VIEW_UPLOADS
 import com.raynaldgitaz.resturantt.ui.theme.ResturanttTheme
 import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.DrinkItem
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ViewUploadsScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize()){
@@ -76,10 +87,21 @@ fun ViewUploadsScreen(navController: NavHostController) {
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Menu",
-                fontSize = 60.sp,
-                fontFamily = FontFamily.Monospace,
-                color = Color.White)
+
+                    TopAppBar(
+                        title = {
+                            Text(text = "Menu",
+                                    modifier = Modifier.padding(100.dp,10.dp,10.dp),
+                                fontSize = 40.sp,
+                                color = Color.White)
+                        },
+                        navigationIcon = {
+                            IconButton(onClick = {navController.navigate(ROUTE_INTERIOR_HOMESCREEN)}) {
+                                Icon(Icons.Filled.ArrowBack, "backIcon")
+                            }
+                        }
+                    )
+
 
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -105,9 +127,14 @@ fun ViewUploadsScreen(navController: NavHostController) {
 
             }
 
+
         }
     }
 }
+
+
+
+
 
 
 @Composable

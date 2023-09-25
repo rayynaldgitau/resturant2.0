@@ -27,6 +27,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.raynaldgitaz.resturantt.R
 import com.raynaldgitaz.resturantt.data.FoodRepository
+import com.raynaldgitaz.resturantt.navigation.ROUTE_ABOUT
 import com.raynaldgitaz.resturantt.navigation.ROUTE_ADD_DRINKS
 import com.raynaldgitaz.resturantt.navigation.ROUTE_ADD_FOOD
 import com.raynaldgitaz.resturantt.navigation.ROUTE_LOGIN
@@ -74,9 +75,9 @@ fun InteriorHomeScreen(navController: NavHostController) {
             Text(text = "Add foods")
         }
         Button(onClick = {
-            navController.navigate(ROUTE_ADD_DRINKS)
+            navController.navigate(ROUTE_ABOUT)
         }) {
-            Text(text = "Add Drinks")
+            Text(text = "About")
         }
 
     }

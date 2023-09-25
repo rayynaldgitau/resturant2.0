@@ -20,10 +20,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -49,6 +54,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.raynaldgitaz.resturantt.R
 import com.raynaldgitaz.resturantt.data.FoodRepository
+import com.raynaldgitaz.resturantt.navigation.ROUTE_INTERIOR_HOMESCREEN
 import com.raynaldgitaz.resturantt.ui.theme.ResturanttTheme
 
 
@@ -63,14 +69,18 @@ fun AddFoodScreen(navController:NavHostController,modifier: Modifier = Modifier)
     Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         var context = LocalContext.current
-        Text(
-            text = "Add food",
-            fontSize = 30.sp,
-            fontFamily = FontFamily.SansSerif,
-            color = Color.White,
-            modifier = Modifier.padding(20.dp),
-            fontWeight = FontWeight.Bold,
-            textDecoration = TextDecoration.Underline
+        TopAppBar(
+            title = {
+                Text(text = "Add Foods",
+                    modifier = Modifier.padding(70.dp,10.dp,10.dp),
+                    fontSize = 40.sp,
+                    color = Color.White)
+            },
+            navigationIcon = {
+                IconButton(onClick = {navController.navigate(ROUTE_INTERIOR_HOMESCREEN)}) {
+                    Icon(Icons.Filled.ArrowBack, "backIcon")
+                }
+            }
         )
         var foodName by remember { mutableStateOf(TextFieldValue("")) }
         var foodDescription by remember { mutableStateOf(TextFieldValue("")) }
