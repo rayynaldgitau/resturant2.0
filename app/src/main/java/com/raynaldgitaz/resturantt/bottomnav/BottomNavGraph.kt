@@ -5,9 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.raynaldgitaz.resturantt.data.BottomBarScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewUploadDrinksScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.beta.ViewUploadDrinksScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.screens.AboutScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.screens.ViewUploadsScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewUploadsScreen
 
 @Composable
 fun BottomNavGraph(navController: NavHostController

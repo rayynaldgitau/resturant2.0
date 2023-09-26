@@ -1,22 +1,19 @@
-package com.raynaldgitaz.resturantt.ui.theme.pages.screens
+package com.raynaldgitaz.resturantt.ui.theme.pages.foodview
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -27,10 +24,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItemDefaults.contentColor
-import androidx.compose.material3.ListItemDefaults.shape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -44,7 +37,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -56,9 +48,7 @@ import com.raynaldgitaz.resturantt.data.FoodRepository
 import com.raynaldgitaz.resturantt.models.Upload
 import com.raynaldgitaz.resturantt.navigation.ROUTE_INTERIOR_HOMESCREEN
 import com.raynaldgitaz.resturantt.navigation.ROUTE_UPDATE_FOOD
-import com.raynaldgitaz.resturantt.navigation.ROUTE_VIEW_UPLOADS
 import com.raynaldgitaz.resturantt.ui.theme.ResturanttTheme
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.DrinkItem
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -109,7 +99,7 @@ fun ViewUploadsScreen(navController: NavHostController) {
             val sections = (0 until 25).toList().chunked(5)
 
             LazyVerticalGrid(
-                columns = GridCells.Fixed(3),
+                columns = GridCells.Fixed(2),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 verticalArrangement = Arrangement.spacedBy(20.dp),
             ) {
@@ -154,28 +144,32 @@ fun UploadItem(image:String,name:String, description:String, price:String, id:St
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(128.dp)
+                .size(195.dp)
                 .clip(RoundedCornerShape(10))
 
         )
         Text(text = name,
-            modifier = Modifier.padding(30.dp,10.dp,10.dp),)
+            modifier = Modifier.padding(30.dp,5.dp,10.dp),)
         Text(text = description,
-            modifier = Modifier.padding(30.dp,10.dp,10.dp),)
+            modifier = Modifier.padding(30.dp,5.dp,10.dp),)
         Text(text = price,
-            modifier = Modifier.padding(30.dp,10.dp,10.dp),)
+            modifier = Modifier.padding(30.dp,5.dp,10.dp),)
+        Row {
 
-        Button(onClick = {
-            foodRepository.deleteFood(id)
-        },
-            colors = ButtonDefaults.buttonColors(Color.Red)
-        ) {
-            Text(text = "Delete")
-        }
-        Button(onClick = {
-            navController.navigate("$ROUTE_UPDATE_FOOD/$id")
-        }) {
-            Text(text = "Update")
+
+            Button(
+                onClick = {
+                    foodRepository.deleteFood(id)
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red)
+            ) {
+                Text(text = "Delete")
+            }
+            Button(onClick = {
+                navController.navigate("$ROUTE_UPDATE_FOOD/$id")
+            }) {
+                Text(text = "Update")
+            }
         }
     }
 }

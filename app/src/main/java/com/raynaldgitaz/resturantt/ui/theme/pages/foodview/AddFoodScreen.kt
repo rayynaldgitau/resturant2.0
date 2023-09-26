@@ -113,15 +113,7 @@ fun AddFoodScreen(navController:NavHostController,modifier: Modifier = Modifier)
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = {
-            //-----------WRITE THE SAVE LOGIC HERE---------------//
-            var foodRepository = FoodRepository(navController,context)
-            foodRepository.saveFood(foodName.text.trim(), foodDescription.text.trim(),
-                foodPrice.text)
-        }) {
-            Text(text = "Save")
-        }
-        Spacer(modifier = Modifier.height(20.dp))
+
 
 
 

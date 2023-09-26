@@ -7,16 +7,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.raynaldgitaz.resturantt.bottomnav.BottomNav
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.AddDrinksScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.beta.AddDrinksScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.screens.AboutScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.AddFoodScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.UpdateDrinkScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.beta.UpdateDrinkScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.UpdateFoodScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewDrinksScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewFoodScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewUploadDrinksScreen
-import com.raynaldgitaz.resturantt.ui.theme.pages.screens.ViewUploadsScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.beta.ViewDrinksScreen
+
+import com.raynaldgitaz.resturantt.ui.theme.pages.beta.ViewUploadDrinksScreen
+import com.raynaldgitaz.resturantt.ui.theme.pages.foodview.ViewUploadsScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.home.HomeScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.interiorhomescreen.InteriorHomeScreen
 import com.raynaldgitaz.resturantt.ui.theme.pages.login.LoginScreen
@@ -55,9 +54,7 @@ fun AppNavHost(modifier: Modifier = Modifier,
         composable(ROUTE_ADD_DRINKS) {
             AddDrinksScreen(navController)
         }
-        composable(ROUTE_VIEW_FOOD) {
-            ViewFoodScreen(navController)
-        }
+
         composable("$ROUTE_UPDATE_FOOD/{id}") { passedData ->
             UpdateFoodScreen(navController, passedData.arguments?.getString("id")!!)
         }

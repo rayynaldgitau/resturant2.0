@@ -13,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.raynaldgitaz.resturantt.models.Drink
-import com.raynaldgitaz.resturantt.models.Food
 import com.raynaldgitaz.resturantt.models.Upload
 import com.raynaldgitaz.resturantt.navigation.ROUTE_LOGIN
 

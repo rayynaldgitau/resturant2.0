@@ -1,4 +1,4 @@
-package com.raynaldgitaz.resturantt.ui.theme.pages.foodview
+package com.raynaldgitaz.resturantt.ui.theme.pages.beta
 
 import android.content.res.Configuration
 import android.widget.Toast
@@ -36,9 +36,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.raynaldgitaz.resturantt.data.DrinksRepository
-import com.raynaldgitaz.resturantt.data.FoodRepository
 import com.raynaldgitaz.resturantt.models.Drink
-import com.raynaldgitaz.resturantt.models.Food
 import com.raynaldgitaz.resturantt.ui.theme.ResturanttTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
